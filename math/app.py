@@ -1,5 +1,4 @@
 from flask import Flask, render_template,request
-
 from formula import bangundatar
 
 oop = bangundatar()
@@ -22,14 +21,32 @@ def pyshics():
 def square():
     return render_template("square.html")
 
+@app.route("/glb")
+def glb():
+    return render_template("glb.html")
+
 @app.route("/send", methods=['POST'])
-def send():
+def formula():
     if request.method == 'POST':
-        num = request.form['num']
-        num = float(num)
-        shape = oop.persegi(num)
-        total = shape.keliling()
-        return render_template("square.html", total=total)
+        if request.form["key"] == "keliling":
+            number = request.form["sisi"]
+            number = float(number)
+            shape = oop.persegi(number)
+            total = shape.keliling()
+            return render_template("square.html", total=total)
+        elif request.form["key"] == "luas":
+            number = request.form["sisib"]
+            number = float(number)
+            shape = oop.persegi(number)
+            total = shape.luas()
+            return render_template("square.html", total=total)
+        elif request.form["key"] == "diagonal":
+            total = 13 + 20
+            return render_template("square.html", total=total)
+
+            
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

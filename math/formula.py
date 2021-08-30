@@ -1,4 +1,5 @@
 import matplotlib
+import math
 
 class bangundatar:
     class persegi:
@@ -10,6 +11,12 @@ class bangundatar:
     
         def luas(self):
             return self.sisi * self.sisi
+        
+        def luas_sisi(self, luas):
+            return math.sqrt(luas)
+
+        def kel_sisi(self, kel):
+            return kel / 4
     
     class persegip:
         def __init__(self, p, l):
@@ -35,12 +42,29 @@ class bangundatar:
             self.tinggi = tinggi
             return self.lebar * self.tinggi / 2
 
+class gerak:
+    class glb:
+        def jarak(self, kecepatan, waktu):
+            return kecepatan * waktu
+        
+        def kecepatan (self, jarak, waktu):
+            return jarak / waktu
+        
+        def waktu(self, jarak, kecepatan):
+            return jarak / kecepatan
+
+    class glbb:
+        def kecepatan(self, jarak, waktu):
+            return jarak / waktu
+        def jarak(self, waktu, kecepatan):
+            return kecepatan / waktu
+
+        
+
 
         
 
             
 
 a = bangundatar()
-b = a.persegi(3)
-print(b.luas())
-
+b = a.persegi()
