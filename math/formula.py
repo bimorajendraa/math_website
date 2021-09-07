@@ -53,11 +53,18 @@ class gerak:
         def waktu(self, jarak, kecepatan):
             return jarak / kecepatan
 
+        def vt(self, vo, a, t):
+            return vo + a * t
+
     class glbb:
         def kecepatan(self, jarak, waktu):
             return jarak / waktu
         def jarak(self, waktu, kecepatan):
             return kecepatan / waktu
+    
+    class gv:
+        def smaks(self, vo, vt, t):
+            return (vo * t) + (vt * t) / 2
 
         
 

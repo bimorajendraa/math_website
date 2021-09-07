@@ -7,23 +7,11 @@ app = Flask(__name__, template_folder="template")
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
 
 @app.route("/math")
-def math():
-    return render_template("math.html")
-
-@app.route("/pyshics")
-def pyshics():
-    return render_template("pyshics.html")
-
-@app.route("/square")
-def square():
-    return render_template("square.html")
-
-@app.route("/glb")
-def glb():
-    return render_template("glb.html")
+def math_home():
+    return render_template("math_home.html")
 
 @app.route("/send", methods=['POST'])
 def formula():
